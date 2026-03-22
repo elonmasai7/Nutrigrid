@@ -1,4 +1,4 @@
-﻿import { clearSessionCookie } from './_auth.js';
+import { clearSessionCookie } from './_auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

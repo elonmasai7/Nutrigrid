@@ -1,6 +1,6 @@
-﻿# HarvestPulse
+# Nutrigrid
 
-Full-stack hackathon prototype for the Fuel the Future challenge. HarvestPulse is an offline-first nutrition system that connects community health workers, supply visibility, and pilot request workflows.
+Full-stack hackathon prototype for the Fuel the Future challenge. Nutrigrid is an offline-first nutrition system that connects community health workers, supply visibility, and pilot request workflows.
 
 ## Features
 - Multi-page public site (Problem, Solution, Impact, Pilot)
@@ -12,9 +12,9 @@ Full-stack hackathon prototype for the Fuel the Future challenge. HarvestPulse i
 - Email notifications on new pilot requests
 
 ## Tech Stack
-- Node.js + Express
-- SQLite (via `better-sqlite3`)
-- Session auth (cookie-based)
+- Vercel serverless functions
+- Postgres (Vercel Postgres / `pg`)
+- JWT auth via HttpOnly cookies
 - Vanilla HTML/CSS/JS frontend
 
 ## Vercel Deployment
@@ -80,7 +80,7 @@ $env:SMTP_SECURE="false"
 $env:SMTP_USER="smtp-user"
 $env:SMTP_PASS="smtp-pass"
 $env:NOTIFY_EMAIL="ops@your.org"
-$env:MAIL_FROM="HarvestPulse <no-reply@your.org>"
+$env:MAIL_FROM="Nutrigrid <no-reply@your.org>"
 ```
 
 If SMTP is not configured, the app continues without sending emails.

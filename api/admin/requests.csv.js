@@ -1,4 +1,4 @@
-﻿import { initDb, pool } from '../_db.js';
+import { initDb, pool } from '../_db.js';
 import { requireAuth, requireRole } from '../_auth.js';
 
 const escapeCsv = (value) => {

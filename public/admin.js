@@ -1,4 +1,4 @@
-ï»¿const loginSection = document.querySelector('#login-section');
+const loginSection = document.querySelector('#login-section');
 const dashboardSection = document.querySelector('#dashboard');
 const loginForm = document.querySelector('#login-form');
 const loginStatus = document.querySelector('#login-status');
@@ -62,8 +62,8 @@ const renderRequests = (requests) => {
     item.className = 'request-item';
     item.innerHTML = `
       <div>
-        <div class="request-title">${req.organization} Â· ${req.region}</div>
-        <div class="request-meta">${req.name} Â· ${req.email}</div>
+        <div class="request-title">${req.organization} · ${req.region}</div>
+        <div class="request-meta">${req.name} · ${req.email}</div>
         <div class="request-meta">${formatDate(req.created_at)}</div>
         <p class="request-message">${req.message || 'No additional notes.'}</p>
       </div>

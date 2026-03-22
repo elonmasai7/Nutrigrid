@@ -1,4 +1,4 @@
-﻿import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import { initDb, pool } from '../_db.js';
 import { requireAuth, requireRole } from '../_auth.js';
 

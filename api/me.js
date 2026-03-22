@@ -1,4 +1,4 @@
-﻿import { getUserFromRequest } from './_auth.js';
+import { getUserFromRequest } from './_auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {

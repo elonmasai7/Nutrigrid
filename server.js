@@ -1,4 +1,4 @@
-﻿import express from 'express';
+import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { randomUUID } from 'crypto';
@@ -54,7 +54,7 @@ try {
   }
 }
 
-const adminEmail = process.env.ADMIN_EMAIL || 'admin@harvestpulse.local';
+const adminEmail = process.env.ADMIN_EMAIL || 'admin@nutrigrid.local';
 const adminPassword = process.env.ADMIN_PASSWORD || 'changeme';
 const reviewerEmail = process.env.REVIEWER_EMAIL || '';
 const reviewerPassword = process.env.REVIEWER_PASSWORD || '';
@@ -93,7 +93,7 @@ if (reviewerEmail && reviewerPassword) {
 app.use(express.json({ limit: '1mb' }));
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'harvestpulse-dev-secret',
+    secret: process.env.SESSION_SECRET || 'Nutrigrid-dev-secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -140,13 +140,13 @@ const sendNotification = async (entry) => {
   }
 
   await mailTransport.sendMail({
-    from: process.env.MAIL_FROM || 'HarvestPulse <no-reply@harvestpulse.local>',
+    from: process.env.MAIL_FROM || 'Nutrigrid <no-reply@nutrigrid.local>',
     to: process.env.NOTIFY_EMAIL,
-    subject: 'New HarvestPulse pilot request',
+    subject: 'New Nutrigrid pilot request',
     text: `New request from ${entry.name} (${entry.organization}) in ${entry.region}.\nEmail: ${entry.email}\nMessage: ${entry.message || 'No notes'}`,
     html: `
       <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1c2421;">
-        <h2 style="color:#2f4c3a;">New HarvestPulse pilot request</h2>
+        <h2 style="color:#2f4c3a;">New Nutrigrid pilot request</h2>
         <p><strong>Name:</strong> ${entry.name}</p>
         <p><strong>Organization:</strong> ${entry.organization}</p>
         <p><strong>Region:</strong> ${entry.region}</p>
@@ -364,5 +364,5 @@ app.patch('/api/admin/users/:id', requireAuth, requireRole(['admin']), (req, res
 });
 
 app.listen(port, () => {
-  console.log(`HarvestPulse running on http://localhost:${port}`);
+  console.log(`Nutrigrid running on http://localhost:${port}`);
 });

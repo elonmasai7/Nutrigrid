@@ -1,4 +1,4 @@
-﻿import { initDb, pool } from './_db.js';
+import { initDb, pool } from './_db.js';
 import { sendPilotNotification } from './_email.js';
 
 export default async function handler(req, res) {

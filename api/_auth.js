@@ -1,4 +1,4 @@
-﻿import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 const cookieName = 'hp_session';
 
@@ -6,7 +6,7 @@ const getSecret = () => {
   const secret = process.env.SESSION_SECRET;
   if (secret) return secret;
   if (process.env.NODE_ENV !== 'production') {
-    return 'harvestpulse-dev-secret';
+    return 'Nutrigrid-dev-secret';
   }
   throw new Error('SESSION_SECRET is not set.');
 };

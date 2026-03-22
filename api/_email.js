@@ -1,4 +1,4 @@
-﻿import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer';
 
 let cachedTransport = null;
 
@@ -25,13 +25,13 @@ const sendPilotNotification = async (entry) => {
   if (!transport || !notify) return;
 
   await transport.sendMail({
-    from: process.env.MAIL_FROM || 'HarvestPulse <no-reply@harvestpulse.local>',
+    from: process.env.MAIL_FROM || 'Nutrigrid <no-reply@nutrigrid.local>',
     to: notify,
-    subject: 'New HarvestPulse pilot request',
+    subject: 'New Nutrigrid pilot request',
     text: `New request from ${entry.name} (${entry.organization}) in ${entry.region}.\nEmail: ${entry.email}\nMessage: ${entry.message || 'No notes'}`,
     html: `
       <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1c2421;">
-        <h2 style="color:#2f4c3a;">New HarvestPulse pilot request</h2>
+        <h2 style="color:#2f4c3a;">New Nutrigrid pilot request</h2>
         <p><strong>Name:</strong> ${entry.name}</p>
         <p><strong>Organization:</strong> ${entry.organization}</p>
         <p><strong>Region:</strong> ${entry.region}</p>
