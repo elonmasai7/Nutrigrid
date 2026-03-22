@@ -1,16 +1,15 @@
 ﻿{
   "name": "harvestpulse",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^9.6.0",
-    "express": "^4.19.2",
-    "express-session": "^1.17.3",
-    "nodemailer": "^6.9.15"
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.15",
+    "pg": "^8.12.0"
   }
 }

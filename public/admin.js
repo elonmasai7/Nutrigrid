@@ -233,10 +233,7 @@ if (logoutButton) {
 
 if (exportButton) {
   exportButton.addEventListener('click', () => {
-    const params = new URLSearchParams();
-    if (filterStatus?.value) params.set('status', filterStatus.value);
-    if (filterStart?.value) params.set('start', filterStart.value);
-    if (filterEnd?.value) params.set('end', filterEnd.value);
+    const params = buildFilterParams();
     const query = params.toString();
     window.location.href = query ? `/api/admin/requests.csv?${query}` : '/api/admin/requests.csv';
   });
@@ -244,9 +241,7 @@ if (exportButton) {
 
 if (applyFiltersButton) {
   applyFiltersButton.addEventListener('click', () => {
-    if (exportButton) {
-      exportButton.click();
-    }
+    loadRequests();
   });
 }
 
