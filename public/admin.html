@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | HarvestPulse</title>
+    <meta name="description" content="HarvestPulse admin dashboard." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">HP</div>
+        <div>
+          <div class="brand-title">HarvestPulse</div>
+          <div class="brand-subtitle">Fuel the Future Hackathon</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="problem.html">Problem</a>
+        <a href="solution.html">Solution</a>
+        <a href="impact.html">Impact</a>
+        <a href="pilot.html">Pilot</a>
+      </nav>
+      <button class="ghost hidden" id="logout">Log out</button>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div>
+          <div class="eyebrow">Admin</div>
+          <h1>Pilot request dashboard.</h1>
+          <p>Review incoming requests, update status, and export insights.</p>
+        </div>
+      </section>
+
+      <section class="section split" id="login-section">
+        <div>
+          <h2>Sign in</h2>
+          <p>Use your admin credentials to access the pilot queue.</p>
+        </div>
+        <div class="panel">
+          <form id="login-form" class="form">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button class="cta" type="submit">Sign in</button>
+            <p class="form-status" id="login-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard" hidden>
+        <div class="dashboard-grid">
+          <div class="panel">
+            <h3>Queue summary</h3>
+            <div class="stat-box">
+              <div>
+                <div class="stat-value" id="count-new">0</div>
+                <div class="stat-label">New</div>
+              </div>
+              <div>
+                <div class="stat-value" id="count-reviewing">0</div>
+                <div class="stat-label">Reviewing</div>
+              </div>
+              <div>
+                <div class="stat-value" id="count-scheduled">0</div>
+                <div class="stat-label">Scheduled</div>
+              </div>
+              <div>
+                <div class="stat-value" id="count-closed">0</div>
+                <div class="stat-label">Closed</div>
+              </div>
+            </div>
+            <button class="ghost export-button" id="export-csv">Export CSV</button>
+            <div class="filter-box">
+              <label>
+                Status
+                <select id="filter-status">
+                  <option value="">All</option>
+                  <option value="new">New</option>
+                  <option value="reviewing">Reviewing</option>
+                  <option value="scheduled">Scheduled</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </label>
+              <label>
+                Start date
+                <input type="date" id="filter-start" />
+              </label>
+              <label>
+                End date
+                <input type="date" id="filter-end" />
+              </label>
+              <button class="ghost" id="apply-filters">Apply filters</button>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Queue</h3>
+            <div id="request-list" class="request-list"></div>
+          </div>
+          <div class="panel admin-only" id="user-management">
+            <h3>Reviewer management</h3>
+            <form id="user-form" class="form compact">
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Temp password
+                <input type="text" name="password" required />
+              </label>
+              <label>
+                Role
+                <select name="role">
+                  <option value="reviewer">Reviewer</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </label>
+              <button class="cta" type="submit">Create user</button>
+              <p class="form-status" id="user-status" role="status"></p>
+            </form>
+            <div id="user-list" class="request-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>HarvestPulse · Admin dashboard</div>
+      <div>Built for the Fuel the Future Hackathon</div>
+    </footer>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

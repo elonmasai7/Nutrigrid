@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilot | HarvestPulse</title>
+    <meta name="description" content="Request a HarvestPulse pilot for your district." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">HP</div>
+        <div>
+          <div class="brand-title">HarvestPulse</div>
+          <div class="brand-subtitle">Fuel the Future Hackathon</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="problem.html">Problem</a>
+        <a href="solution.html">Solution</a>
+        <a href="impact.html">Impact</a>
+        <a href="pilot.html" class="active">Pilot</a>
+      </nav>
+      <a class="cta" href="pilot.html">Request Pilot</a>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div>
+          <div class="eyebrow">Pilot</div>
+          <h1>Launch a pilot in 21 days.</h1>
+          <p>Tell us about your region and team. We will respond with a district-ready plan.</p>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div>
+          <h2>Pilot readiness</h2>
+          <ul class="list">
+            <li>50 CHWs and 2 district hubs.</li>
+            <li>Initial stock of fortified staples or MNP.</li>
+            <li>Monthly screening target of 6,000 children.</li>
+            <li>12-week outcome review.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Request a pilot</h3>
+          <form id="pilot-form" class="form">
+            <label>
+              Full name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Organization
+              <input type="text" name="organization" required />
+            </label>
+            <label>
+              Work email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Region or district
+              <input type="text" name="region" required />
+            </label>
+            <label>
+              Notes
+              <textarea name="message" rows="4" placeholder="Tell us about your population, constraints, or timelines."></textarea>
+            </label>
+            <button class="cta" type="submit">Submit request</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>HarvestPulse · Open-source pilot concept</div>
+      <div>Built for the Fuel the Future Hackathon</div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
